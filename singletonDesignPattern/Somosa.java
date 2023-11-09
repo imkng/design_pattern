@@ -1,6 +1,8 @@
 package singletonDesignPattern;
 
-public class Somosa {
+import java.io.Serializable;
+
+public class Somosa implements Serializable {
     // static variable have always default value is null
     private static Somosa somosa;
 
