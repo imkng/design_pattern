@@ -6,6 +6,9 @@ public class Somosa {
 
     //1. Constructor Should be private
     private Somosa() {
+        if (somosa != null){
+            throw new RuntimeException("You are breaking the singleton design property");
+        }
     }
     //2. make static method for object creation
 
