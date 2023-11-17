@@ -1,8 +1,19 @@
 package prototypeDesignPattern;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NetworkConnection implements Cloneable{
     private String ip;
     private String importantData;
+    private List<String> domains = new ArrayList<>();
+    public List<String> getDomains() {
+        return domains;
+    }
+
+    public void setDomains(List<String> domains) {
+        this.domains = domains;
+    }
 
     public String getIp() {
         return ip;
@@ -21,6 +32,10 @@ public class NetworkConnection implements Cloneable{
     }
     public void loadVeryImportantData(){
         this.importantData = "Very very important Data";
+        this.domains.add("Hello.com");
+        this.domains.add("Hi.com");
+        this.domains.add("Bye.com");
+
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -33,6 +48,7 @@ public class NetworkConnection implements Cloneable{
         return "NetworkConnection{" +
                 "ip='" + ip + '\'' +
                 ", importantData='" + importantData + '\'' +
+                ", domains=" + domains +
                 '}';
     }
 

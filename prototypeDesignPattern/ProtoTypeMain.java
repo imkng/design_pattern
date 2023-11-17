@@ -11,5 +11,9 @@ public class ProtoTypeMain {
 
         NetworkConnection clone = networkConnection.clone();
         System.out.println(clone);
+        NetworkConnection clone2 = networkConnection.clone();
+        clone2.getDomains().remove(0);
+        System.out.println(clone);
+        System.out.println(networkConnection);
     }
 }
