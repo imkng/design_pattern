@@ -54,12 +54,14 @@ public class NetworkConnection implements Cloneable{
 
     @Override
     public NetworkConnection clone() {
-        try {
-            NetworkConnection clone = (NetworkConnection) super.clone();
-            // TODO: copy mutable state here, so the clone can't change the internals of the original
-            return clone;
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
+        NetworkConnection clone = new NetworkConnection();
+        // TODO: copy mutable state here, so the clone can't change the internals of the original
+        clone.setIp(this.ip);
+        clone.setImportantData(this.importantData);
+        for (String str: this.getDomains()) {
+            clone.getDomains().add(str);
         }
+
+        return clone;
     }
 }
